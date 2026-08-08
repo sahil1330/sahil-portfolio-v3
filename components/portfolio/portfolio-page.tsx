@@ -17,11 +17,9 @@ function SectionMarker({ index, label }: { index: string; label: string }) {
 
 function ProjectPlaceholder({
   title,
-  imagePath,
   accent,
 }: {
   title: string;
-  imagePath: string;
   accent: string;
 }) {
   return (
@@ -31,9 +29,9 @@ function ProjectPlaceholder({
       role="img"
       aria-label={`${title} project image placeholder`}
     >
-      <span className="project-placeholder__index">SM / CASE STUDY</span>
+      <span className="project-placeholder__index">SELECTED PROJECT</span>
       <span className="project-placeholder__title">{title}</span>
-      <span className="project-placeholder__path">ADD {imagePath}</span>
+      <span className="project-placeholder__path">PROJECT PREVIEW COMING SOON</span>
       <span className="project-placeholder__cross project-placeholder__cross--top" />
       <span className="project-placeholder__cross project-placeholder__cross--bottom" />
     </div>
@@ -68,21 +66,21 @@ export function PortfolioPage() {
             <div className="hero__grid" aria-hidden="true" />
             <div className="hero__copy">
             <div className="eyebrow">
-              <span>Product-focused full-stack engineer</span>
+              <span>Full-stack engineer</span>
               <span className="eyebrow__location">
                 <MapPin aria-hidden="true" /> Mumbai, India
               </span>
             </div>
             <h1 id="hero-heading">
-              <span className="hero__line-mask"><span data-hero-line>I build digital products</span></span>
+              <span className="hero__line-mask"><span data-hero-line>I build reliable products</span></span>
               <span className="hero__headline-secondary hero__line-mask">
-                <span data-hero-line>from interface <em>to</em> infrastructure.</span>
+                <span data-hero-line>across web, cloud <em>&amp;</em> connected devices.</span>
               </span>
             </h1>
             <div className="hero__footer" data-hero-support>
               <p>
-                I work across product, frontend, backend and delivery—bringing
-                complex ideas into production as clear, dependable systems.
+                From product interfaces and APIs to infrastructure and
+                integrations, I turn complex requirements into software that ships.
               </p>
               <a className="hero__scroll" href="#work">
                 Explore selected work
@@ -93,7 +91,7 @@ export function PortfolioPage() {
 
             <div className="hero-stage" aria-label="Scroll-controlled 3D avatar scene">
               <div className="hero-stage__frame">
-              <span className="hero-stage__label">3D AVATAR / SCENE 01</span>
+              <span className="hero-stage__label">SAHIL / INTERACTIVE PORTRAIT</span>
               <div className="avatar-placeholder" aria-hidden="true">
                 <span className="avatar-placeholder__head" />
                 <span className="avatar-placeholder__body" />
@@ -101,20 +99,20 @@ export function PortfolioPage() {
               </div>
               <LazyHeroScene />
               <span className="hero-stage__note">
-                Procedural stand-in — final GLB will replace this model
+                Scroll to explore
               </span>
               </div>
             </div>
 
             <div className="hero-phase" data-hero-phase>
-              <span>02 / Systems</span>
-              <h2>Interfaces become connected product systems.</h2>
-              <p>APIs, data, identity and services—designed as one working product.</p>
+              <span>02 / Product engineering</span>
+              <h2>Frontend, backend and data designed together.</h2>
+              <p>Every layer supports a clear, usable product experience.</p>
             </div>
             <div className="hero-phase" data-hero-phase>
-              <span>03 / Infrastructure</span>
-              <h2>Systems become dependable in production.</h2>
-              <p>Cloud, delivery, performance and the operational details that keep products useful.</p>
+              <span>03 / Delivery</span>
+              <h2>Built to perform beyond the development environment.</h2>
+              <p>Deployment, security and performance considered from the start.</p>
             </div>
           </div>
           <div className="hero-chapter__scroll-space" aria-hidden="true" />
@@ -123,10 +121,10 @@ export function PortfolioPage() {
         <section className="work-section section-wrap" id="work">
           <SectionMarker index="01" label="Selected work" />
           <div className="section-intro" data-reveal>
-            <h2>Evidence over a list of tools.</h2>
+            <h2>Selected work.</h2>
             <p>
-              Selected systems where I owned meaningful engineering decisions,
-              not just isolated screens.
+              Products and platforms I have helped take from requirements to
+              working, production-ready systems.
             </p>
           </div>
 
@@ -136,7 +134,6 @@ export function PortfolioPage() {
                 <div className="project__visual">
                   <ProjectPlaceholder
                     title={project.title}
-                    imagePath={project.imagePath}
                     accent={project.accent}
                   />
                 </div>
@@ -164,7 +161,7 @@ export function PortfolioPage() {
         <section className="capabilities-section section-wrap" id="profile">
           <SectionMarker index="02" label="Engineering profile" />
           <div className="section-intro section-intro--wide" data-reveal>
-            <h2>I connect the layers that make a product work.</h2>
+            <h2>What I work on.</h2>
           </div>
           <div className="capability-list">
             {capabilities.map((capability) => (
@@ -182,10 +179,10 @@ export function PortfolioPage() {
           <SectionMarker index="03" label="Experience" />
           <div className="experience-grid">
             <div className="experience-intro" data-reveal>
-              <h2>Built through ownership.</h2>
+              <h2>Professional experience.</h2>
               <p>
-                The thread across my work is simple: understand the actual
-                problem, own the interfaces between disciplines and ship.
+                Building and modernizing web products across SaaS, nonprofit
+                platforms and assistive technology.
               </p>
             </div>
             <div className="experience-list">
@@ -207,25 +204,25 @@ export function PortfolioPage() {
           <SectionMarker index="04" label="About" />
           <div className="about-grid">
             <div className="portrait-placeholder" role="img" aria-label="Portrait placeholder for Sahil Mane" data-reveal>
-              <span>PORTRAIT / 4:5</span>
-              <strong>Add your professional portrait</strong>
-              <small>/public/images/sahil-portrait.webp</small>
+              <span>SAHIL MANE / MUMBAI</span>
+              <strong>Portrait coming soon</strong>
+              <small>FULL-STACK ENGINEER</small>
             </div>
             <div className="about-copy" data-reveal>
               <h2>
-                An engineer who cares about the product after the code ships.
+                I build across the full product lifecycle.
               </h2>
               <div className="about-copy__body">
                 <p>
-                  I’m Sahil, a Mumbai-based full-stack engineer. I like work
-                  that sits between disciplines: shaping an interface,
-                  reasoning through an API, untangling a production issue and
-                  helping the team make a better technical decision.
+                  I’m Sahil, a Mumbai-based full-stack engineer working across
+                  frontend, backend and cloud infrastructure. I enjoy turning
+                  product requirements into systems that are clear to use and
+                  dependable in production.
                 </p>
                 <p>
-                  My experience spans SaaS, nonprofit platforms, assistive
-                  technology, cloud infrastructure and applied AI. I’m most
-                  useful when the problem needs both depth and ownership.
+                  My work spans SaaS, nonprofit platforms, assistive technology
+                  and applied AI. I have built new products, modernized existing
+                  platforms and solved the production details required to ship them.
                 </p>
               </div>
             </div>
@@ -234,8 +231,8 @@ export function PortfolioPage() {
 
         <section className="contact-section" id="contact">
           <SectionMarker index="05" label="Contact" />
-          <p>Have a product, platform or difficult engineering problem?</p>
-          <h2>Let’s build what matters.</h2>
+          <p>Have a product to build or a platform to improve?</p>
+          <h2>Let’s work together.</h2>
           <div className="contact-actions">
             <a
               className={cn(buttonVariants({ variant: "default", size: "lg" }), "contact-button")}
@@ -253,8 +250,8 @@ export function PortfolioPage() {
           <footer className="site-footer">
             <span>© {new Date().getFullYear()} Sahil Mane</span>
             <div>
-              <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="https://github.com/sahil1330" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/sahil-mane-003a0924b/" target="_blank" rel="noreferrer">LinkedIn</a>
             </div>
             <a href="#top">Back to top ↑</a>
           </footer>

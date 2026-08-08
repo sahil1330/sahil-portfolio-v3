@@ -14,9 +14,9 @@ export const projects: Project[] = [
     title: "Zaprill",
     category: "Job SaaS · Product engineering",
     summary:
-      "A job-search platform shaped around discovery, resume intelligence, credit-based billing and measurable user journeys.",
+      "An AI-powered job-search SaaS bringing job discovery, resume tools, account management and billing into one product.",
     contribution:
-      "Product architecture, full-stack implementation, authentication, analytics and payments.",
+      "Full-stack product development, authentication, analytics, credit-based billing and payment integration.",
     imagePath: "/images/projects/zaprill-cover.webp",
     accent: "#ff5a36",
   },
@@ -25,9 +25,9 @@ export const projects: Project[] = [
     title: "e-Sight",
     category: "Assistive technology · Hardware + software",
     summary:
-      "An assistive system exploring real-time environmental awareness through embedded sensing, BLE and voice feedback.",
+      "An assistive device designed to help blind and low-vision users understand nearby objects through sensors and audio feedback.",
     contribution:
-      "Product development, hardware integration, mobile prototyping and cloud API architecture.",
+      "Software development, ESP32 and BLE integration, mobile prototyping and backend architecture.",
     imagePath: "/images/projects/esight-cover.webp",
     accent: "#d9ff43",
   },
@@ -36,9 +36,9 @@ export const projects: Project[] = [
     title: "Vishnushakti",
     category: "Nonprofit platform · Full-stack development",
     summary:
-      "A production operations platform joining content, donations, volunteers, communications and administration.",
+      "A custom nonprofit website and administration platform for donations, publishing, volunteers and community communication.",
     contribution:
-      "Custom PHP platform, payment workflows, email infrastructure and operational tooling.",
+      "End-to-end PHP development, Razorpay payments, email workflows, content tools and admin features.",
     imagePath: "/images/projects/vishnushakti-cover.webp",
     accent: "#83b7ff",
   },
@@ -47,9 +47,9 @@ export const projects: Project[] = [
     title: "Platform modernization",
     category: "Professional engineering · Confidential",
     summary:
-      "Modernizing a production web platform while improving localization, framework health, security and delivery confidence.",
+      "Modernizing a production web platform with a newer application foundation, cleaner localization and stronger security.",
     contribution:
-      "Next.js migration, dependency hardening, SEO localization and cross-functional delivery.",
+      "Next.js 14 to 16 migration, dependency upgrades, SEO-friendly localization and security fixes.",
     imagePath: "/images/projects/platform-cover.webp",
     accent: "#f0c4ff",
   },
@@ -60,29 +60,29 @@ export const capabilities = [
     number: "01",
     title: "Product engineering",
     statement:
-      "Turning ambiguous product goals into clear, maintainable interfaces and working systems.",
-    proof: "From zero-to-one prototypes to production SaaS workflows.",
+      "Building complete web products across user experience, application logic and data.",
+    proof: "SaaS workflows, internal tools and customer-facing platforms.",
   },
   {
     number: "02",
     title: "Platform architecture",
     statement:
-      "Designing the boundaries between frontend, APIs, data, authentication and third-party services.",
-    proof: "Built payment, analytics, content and operational platforms.",
+      "Designing APIs, authentication, databases and third-party integrations as one maintainable system.",
+    proof: "Payments, analytics, content systems and operational workflows.",
   },
   {
     number: "03",
     title: "Cloud & delivery",
     statement:
-      "Making products deployable, observable and resilient across their real operating environment.",
-    proof: "AWS, containers, deployment pipelines and production debugging.",
+      "Deploying applications and solving the performance, security and reliability issues that appear in production.",
+    proof: "AWS, Docker, deployment pipelines and production debugging.",
   },
   {
     number: "04",
     title: "Applied AI & integrations",
     statement:
-      "Using AI where it improves a product outcome, with dependable services around it.",
-    proof: "AI feature POCs, data integrations and workflow automation.",
+      "Adding AI capabilities and external services where they make the product more useful.",
+    proof: "AI feature prototypes, data integrations and workflow automation.",
   },
 ];
 

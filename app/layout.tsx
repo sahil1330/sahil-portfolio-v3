@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s — Sahil Mane",
   },
   description:
-    "Full-stack engineer building digital products from interface to infrastructure.",
+    "Mumbai-based full-stack engineer building web products, cloud systems and connected-device experiences.",
   keywords: [
     "Sahil Mane",
     "Full-Stack Engineer",
@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     url: "https://sahilmane.in",
     title: "Sahil Mane — Product-Focused Full-Stack Engineer",
     description:
-      "I design, build and scale digital products—from interface to infrastructure.",
+      "Full-stack engineer building reliable products across web, cloud and connected devices.",
     siteName: "Sahil Mane",
   },
   twitter: {
     card: "summary_large_image",
     title: "Sahil Mane — Product-Focused Full-Stack Engineer",
     description:
-      "I design, build and scale digital products—from interface to infrastructure.",
+      "Full-stack engineer building reliable products across web, cloud and connected devices.",
   },
   other: {
     "codex-preview": "development",

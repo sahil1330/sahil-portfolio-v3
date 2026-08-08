@@ -403,6 +403,8 @@ a {
   top: 50%;
   left: var(--page-gutter);
   width: min(48rem, 58vw);
+  visibility: hidden;
+  opacity: 0;
   transform: translateY(-50%);
   pointer-events: none;
 }
