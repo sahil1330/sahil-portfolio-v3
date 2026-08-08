@@ -1,7 +1,7 @@
 import { ArrowDown, ArrowUpRight, MapPin } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
-import { HeroScene } from "@/components/portfolio/hero-scene";
+import { LazyHeroScene } from "@/components/portfolio/lazy-hero-scene";
 import { MotionController } from "@/components/portfolio/motion-controller";
 import { capabilities, experience, projects } from "@/lib/portfolio-data";
 import { cn } from "@/lib/utils";
@@ -99,7 +99,7 @@ export function PortfolioPage() {
                 <span className="avatar-placeholder__body" />
                 <span className="avatar-placeholder__base" />
               </div>
-              <HeroScene />
+              <LazyHeroScene />
               <span className="hero-stage__note">
                 Procedural stand-in — final GLB will replace this model
               </span>
