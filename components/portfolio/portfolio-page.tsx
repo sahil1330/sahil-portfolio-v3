@@ -1,6 +1,8 @@
 import { ArrowDown, ArrowUpRight, MapPin } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
+import { HeroScene } from "@/components/portfolio/hero-scene";
+import { MotionController } from "@/components/portfolio/motion-controller";
 import { capabilities, experience, projects } from "@/lib/portfolio-data";
 import { cn } from "@/lib/utils";
 
@@ -61,9 +63,10 @@ export function PortfolioPage() {
       </header>
 
       <main id="main-content">
-        <section className="hero" id="top" aria-labelledby="hero-heading">
-          <div className="hero__grid" aria-hidden="true" />
-          <div className="hero__copy">
+        <section className="hero-chapter" id="top" aria-labelledby="hero-heading">
+          <div className="hero">
+            <div className="hero__grid" aria-hidden="true" />
+            <div className="hero__copy">
             <div className="eyebrow">
               <span>Product-focused full-stack engineer</span>
               <span className="eyebrow__location">
@@ -71,12 +74,12 @@ export function PortfolioPage() {
               </span>
             </div>
             <h1 id="hero-heading">
-              <span>I build digital products</span>
-              <span className="hero__headline-secondary">
-                from interface <em>to</em> infrastructure.
+              <span className="hero__line-mask"><span data-hero-line>I build digital products</span></span>
+              <span className="hero__headline-secondary hero__line-mask">
+                <span data-hero-line>from interface <em>to</em> infrastructure.</span>
               </span>
             </h1>
-            <div className="hero__footer">
+            <div className="hero__footer" data-hero-support>
               <p>
                 I work across product, frontend, backend and delivery—bringing
                 complex ideas into production as clear, dependable systems.
@@ -86,26 +89,40 @@ export function PortfolioPage() {
                 <ArrowDown aria-hidden="true" />
               </a>
             </div>
-          </div>
+            </div>
 
-          <div className="hero-stage" aria-label="3D avatar placeholder">
-            <div className="hero-stage__frame">
+            <div className="hero-stage" aria-label="Scroll-controlled 3D avatar scene">
+              <div className="hero-stage__frame">
               <span className="hero-stage__label">3D AVATAR / SCENE 01</span>
               <div className="avatar-placeholder" aria-hidden="true">
                 <span className="avatar-placeholder__head" />
                 <span className="avatar-placeholder__body" />
                 <span className="avatar-placeholder__base" />
               </div>
+              <HeroScene />
               <span className="hero-stage__note">
-                Temporary model — final GLB will replace this stage
+                Procedural stand-in — final GLB will replace this model
               </span>
+              </div>
+            </div>
+
+            <div className="hero-phase" data-hero-phase>
+              <span>02 / Systems</span>
+              <h2>Interfaces become connected product systems.</h2>
+              <p>APIs, data, identity and services—designed as one working product.</p>
+            </div>
+            <div className="hero-phase" data-hero-phase>
+              <span>03 / Infrastructure</span>
+              <h2>Systems become dependable in production.</h2>
+              <p>Cloud, delivery, performance and the operational details that keep products useful.</p>
             </div>
           </div>
+          <div className="hero-chapter__scroll-space" aria-hidden="true" />
         </section>
 
         <section className="work-section section-wrap" id="work">
           <SectionMarker index="01" label="Selected work" />
-          <div className="section-intro">
+          <div className="section-intro" data-reveal>
             <h2>Evidence over a list of tools.</h2>
             <p>
               Selected systems where I owned meaningful engineering decisions,
@@ -115,7 +132,7 @@ export function PortfolioPage() {
 
           <div className="project-list">
             {projects.map((project) => (
-              <article className="project" key={project.title}>
+              <article className="project" key={project.title} data-reveal>
                 <div className="project__visual">
                   <ProjectPlaceholder
                     title={project.title}
@@ -146,12 +163,12 @@ export function PortfolioPage() {
 
         <section className="capabilities-section section-wrap" id="profile">
           <SectionMarker index="02" label="Engineering profile" />
-          <div className="section-intro section-intro--wide">
+          <div className="section-intro section-intro--wide" data-reveal>
             <h2>I connect the layers that make a product work.</h2>
           </div>
           <div className="capability-list">
             {capabilities.map((capability) => (
-              <article className="capability" key={capability.title}>
+              <article className="capability" key={capability.title} data-reveal>
                 <span className="capability__number">{capability.number}</span>
                 <h3>{capability.title}</h3>
                 <p>{capability.statement}</p>
@@ -164,7 +181,7 @@ export function PortfolioPage() {
         <section className="experience-section section-wrap">
           <SectionMarker index="03" label="Experience" />
           <div className="experience-grid">
-            <div className="experience-intro">
+            <div className="experience-intro" data-reveal>
               <h2>Built through ownership.</h2>
               <p>
                 The thread across my work is simple: understand the actual
@@ -173,7 +190,7 @@ export function PortfolioPage() {
             </div>
             <div className="experience-list">
               {experience.map((item) => (
-                <article className="experience-item" key={`${item.role}-${item.period}`}>
+                <article className="experience-item" key={`${item.role}-${item.period}`} data-reveal>
                   <span>{item.period}</span>
                   <div>
                     <h3>{item.role}</h3>
@@ -189,12 +206,12 @@ export function PortfolioPage() {
         <section className="about-section section-wrap">
           <SectionMarker index="04" label="About" />
           <div className="about-grid">
-            <div className="portrait-placeholder" role="img" aria-label="Portrait placeholder for Sahil Mane">
+            <div className="portrait-placeholder" role="img" aria-label="Portrait placeholder for Sahil Mane" data-reveal>
               <span>PORTRAIT / 4:5</span>
               <strong>Add your professional portrait</strong>
               <small>/public/images/sahil-portrait.webp</small>
             </div>
-            <div className="about-copy">
+            <div className="about-copy" data-reveal>
               <h2>
                 An engineer who cares about the product after the code ships.
               </h2>
@@ -243,6 +260,7 @@ export function PortfolioPage() {
           </footer>
         </section>
       </main>
+      <MotionController />
     </div>
   );
 }

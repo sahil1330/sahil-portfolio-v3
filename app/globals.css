@@ -183,8 +183,20 @@ a {
   box-shadow: 0 0 0 4px rgb(138 217 116 / 10%);
 }
 
+.hero-chapter {
+  position: relative;
+  min-height: 300svh;
+}
+
+.hero-chapter__scroll-space {
+  height: 200svh;
+  pointer-events: none;
+}
+
 .hero {
   position: relative;
+  position: sticky;
+  top: 0;
   display: grid;
   min-height: 100svh;
   grid-template-columns: minmax(0, 1.4fr) minmax(22rem, 0.6fr);
@@ -251,6 +263,15 @@ a {
   display: block;
 }
 
+.hero__line-mask {
+  overflow: hidden;
+}
+
+.hero__line-mask > span {
+  display: block;
+  transform-origin: left center;
+}
+
 .hero__headline-secondary {
   color: #a9adb1;
 }
@@ -315,6 +336,17 @@ a {
     linear-gradient(to bottom, transparent, rgb(255 255 255 / 2%));
 }
 
+.hero-scene {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+}
+
+.hero-scene canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .hero-stage__frame::before,
 .hero-stage__frame::after {
   position: absolute;
@@ -358,6 +390,44 @@ a {
   width: min(72%, 20rem);
   aspect-ratio: 0.62;
   filter: drop-shadow(0 1.5rem 3rem rgb(0 0 0 / 45%));
+}
+
+.hero-scene + .hero-stage__note,
+.hero-stage__label {
+  z-index: 3;
+}
+
+.hero-phase {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: var(--page-gutter);
+  width: min(48rem, 58vw);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.hero-phase > span {
+  color: var(--signal);
+  font: 520 0.67rem/1 var(--font-geist-mono), monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero-phase h2 {
+  margin: 1.25rem 0 1.5rem;
+  font-size: clamp(3.5rem, 6vw, 7.5rem);
+  font-weight: 540;
+  line-height: 0.91;
+  letter-spacing: -0.07em;
+}
+
+.hero-phase p {
+  max-width: 30rem;
+  margin: 0;
+  color: #b8bab9;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.55;
 }
 
 .avatar-placeholder span {
@@ -918,8 +988,18 @@ a {
     font-size: 0.56rem;
   }
 
+  .hero-chapter {
+    min-height: auto;
+  }
+
+  .hero-chapter__scroll-space,
+  .hero-phase {
+    display: none;
+  }
+
   .hero {
     display: flex;
+    position: relative;
     min-height: auto;
     flex-direction: column;
     padding-top: 6.5rem;
