@@ -340,6 +340,16 @@ a {
   position: absolute;
   z-index: 1;
   inset: 0;
+  contain: strict;
+  isolation: isolate;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.hero-scene[data-ready="true"] {
+  opacity: 1;
 }
 
 .hero-scene canvas {

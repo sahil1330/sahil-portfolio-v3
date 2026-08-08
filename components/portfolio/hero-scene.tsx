@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Suspense, useEffect, useRef, useState } from "react";
-import type { Group, Mesh } from "three";
+import type { Group, Mesh, WebGLRenderer } from "three";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -164,6 +164,8 @@ export function HeroScene() {
   const container = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [canRenderWebgl, setCanRenderWebgl] = useState(false);
+  const [sceneReady, setSceneReady] = useState(false);
+  const renderer = useRef<WebGLRenderer | null>(null);
 
   useEffect(() => {
     if (!container.current) return;
@@ -178,22 +180,58 @@ export function HeroScene() {
   }, []);
 
   useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
+    const timer = window.setTimeout(() => {
       try {
         const testCanvas = document.createElement("canvas");
         const context =
-          testCanvas.getContext("webgl2") ?? testCanvas.getContext("webgl");
-        setCanRenderWebgl(Boolean(context));
+          testCanvas.getContext("webgl2", {
+            alpha: true,
+            antialias: true,
+            failIfMajorPerformanceCaveat: true,
+          }) ??
+          testCanvas.getContext("webgl", {
+            alpha: true,
+            antialias: true,
+            failIfMajorPerformanceCaveat: true,
+          });
+
+        if (!context) {
+          setCanRenderWebgl(false);
+          return;
+        }
+
+        context.getParameter(context.VERSION);
+        context.getExtension("WEBGL_lose_context")?.loseContext();
+        setCanRenderWebgl(true);
       } catch {
         setCanRenderWebgl(false);
       }
-    });
+    }, 250);
 
-    return () => window.cancelAnimationFrame(frame);
+    return () => window.clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const canvas = renderer.current?.domElement;
+    if (!canvas) return;
+
+    const handleContextLost = (event: Event) => {
+      event.preventDefault();
+      setSceneReady(false);
+      setCanRenderWebgl(false);
+    };
+
+    canvas.addEventListener("webglcontextlost", handleContextLost);
+    return () => canvas.removeEventListener("webglcontextlost", handleContextLost);
+  }, [sceneReady]);
+
   return (
-    <div className="hero-scene" ref={container} aria-hidden="true">
+    <div
+      className="hero-scene"
+      data-ready={sceneReady ? "true" : "false"}
+      ref={container}
+      aria-hidden="true"
+    >
       {canRenderWebgl ? (
         <Canvas
           dpr={[1, 1.5]}
@@ -201,6 +239,10 @@ export function HeroScene() {
           camera={{ position: [0, 0.15, 5.5], fov: 42 }}
           gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
           shadows
+          onCreated={({ gl }) => {
+            renderer.current = gl;
+            setSceneReady(true);
+          }}
         >
           <Suspense fallback={null}>
             <Scene />
