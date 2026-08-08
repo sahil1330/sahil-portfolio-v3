@@ -66,7 +66,7 @@ export function PortfolioPage() {
             <div className="hero__grid" aria-hidden="true" />
             <div className="hero__copy">
             <div className="eyebrow">
-              <span>Full-stack engineer</span>
+              <span>Full-stack engineer · Engineering lead</span>
               <span className="eyebrow__location">
                 <MapPin aria-hidden="true" /> Mumbai, India
               </span>
@@ -182,7 +182,7 @@ export function PortfolioPage() {
               <h2>Professional experience.</h2>
               <p>
                 Building and modernizing web products across SaaS, nonprofit
-                platforms and assistive technology.
+                platforms, enterprise systems and assistive technology.
               </p>
             </div>
             <div className="experience-list">
@@ -215,14 +215,15 @@ export function PortfolioPage() {
               <div className="about-copy__body">
                 <p>
                   I’m Sahil, a Mumbai-based full-stack engineer working across
-                  frontend, backend and cloud infrastructure. I enjoy turning
-                  product requirements into systems that are clear to use and
-                  dependable in production.
+                  frontend, backend and cloud infrastructure. At Eshkon, I lead
+                  a team of engineers delivering scalable applications and
+                  personalized agentic workflows for an enterprise client.
                 </p>
                 <p>
-                  My work spans SaaS, nonprofit platforms, assistive technology
-                  and applied AI. I have built new products, modernized existing
-                  platforms and solved the production details required to ship them.
+                  My work spans enterprise platforms, SaaS, assistive technology
+                  and applied AI. I enjoy turning complex requirements into
+                  maintainable systems, improving how teams deliver, and solving
+                  the production details required to operate at scale.
                 </p>
               </div>
             </div>

@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sahilmane.in"),
   title: {
-    default: "Sahil Mane — Product-Focused Full-Stack Engineer",
+    default: "Sahil Mane — Full-Stack Engineer & Engineering Lead",
     template: "%s — Sahil Mane",
   },
   description:
-    "Mumbai-based full-stack engineer building web products, cloud systems and connected-device experiences.",
+    "Mumbai-based full-stack engineer and engineering lead building scalable products, cloud systems and agentic workflows.",
   keywords: [
     "Sahil Mane",
     "Full-Stack Engineer",
@@ -31,16 +31,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://sahilmane.in",
-    title: "Sahil Mane — Product-Focused Full-Stack Engineer",
+    title: "Sahil Mane — Full-Stack Engineer & Engineering Lead",
     description:
-      "Full-stack engineer building reliable products across web, cloud and connected devices.",
+      "Full-stack engineer and engineering lead building scalable products, cloud systems and agentic workflows.",
     siteName: "Sahil Mane",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sahil Mane — Product-Focused Full-Stack Engineer",
+    title: "Sahil Mane — Full-Stack Engineer & Engineering Lead",
     description:
-      "Full-stack engineer building reliable products across web, cloud and connected devices.",
+      "Full-stack engineer and engineering lead building scalable products, cloud systems and agentic workflows.",
   },
   other: {
     "codex-preview": "development",

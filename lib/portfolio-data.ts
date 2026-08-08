@@ -44,12 +44,12 @@ export const projects: Project[] = [
   },
   {
     number: "04",
-    title: "Platform modernization",
-    category: "Professional engineering · Confidential",
+    title: "Enterprise AI systems",
+    category: "Enterprise engineering · Confidential client",
     summary:
-      "Modernizing a production web platform with a newer application foundation, cleaner localization and stronger security.",
+      "Scalable applications and personalized agentic workflows built for a large Canadian enterprise and used by thousands of people.",
     contribution:
-      "Next.js 14 to 16 migration, dependency upgrades, SEO-friendly localization and security fixes.",
+      "Engineering leadership, monorepo and Node.js development, complex agent workflows, and GCP infrastructure with Cloud Tasks and Redis.",
     imagePath: "/images/projects/platform-cover.webp",
     accent: "#f0c4ff",
   },
@@ -67,32 +67,32 @@ export const capabilities = [
     number: "02",
     title: "Platform architecture",
     statement:
-      "Designing APIs, authentication, databases and third-party integrations as one maintainable system.",
-    proof: "Payments, analytics, content systems and operational workflows.",
+      "Designing services, data flows and infrastructure that remain maintainable as products and teams grow.",
+    proof: "Monorepos, Node.js services, APIs, authentication and distributed workflows.",
   },
   {
     number: "03",
     title: "Cloud & delivery",
     statement:
       "Deploying applications and solving the performance, security and reliability issues that appear in production.",
-    proof: "AWS, Docker, deployment pipelines and production debugging.",
+    proof: "GCP, Cloud Tasks, Redis, AWS, Docker and production debugging.",
   },
   {
     number: "04",
     title: "Applied AI & integrations",
     statement:
-      "Adding AI capabilities and external services where they make the product more useful.",
-    proof: "AI feature prototypes, data integrations and workflow automation.",
+      "Building personalized agentic workflows that turn complex product requirements into dependable user experiences.",
+    proof: "Production AI workflows, external services and workflow automation.",
   },
 ];
 
 export const experience = [
   {
-    period: "Current",
+    period: "Jul 2025 — Present",
     role: "Full-Stack Engineer",
-    context: "Product platform · Contract",
+    context: "Eshkon · Engineering team lead",
     outcome:
-      "Platform modernization, localization architecture, security upgrades and applied AI initiatives.",
+      "Leading a team building scalable applications for a confidential Canadian enterprise client. My work spans monorepo architecture, Node.js services, personalized agentic workflows and GCP systems used by thousands, while improving engineering productivity and delivery.",
   },
   {
     period: "Venture",
