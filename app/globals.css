@@ -379,6 +379,7 @@ a {
   position: absolute;
   z-index: 1;
   inset: 2.75rem -1.5rem 0 -1.5rem;
+  contain: layout paint;
   pointer-events: none;
 }
 
@@ -435,7 +436,8 @@ a {
   visibility: hidden;
   opacity: 0;
   transform-origin: 50% 88%;
-  filter: drop-shadow(0 1.5rem 2.5rem rgb(0 0 0 / 42%));
+  backface-visibility: hidden;
+  will-change: transform, opacity;
 }
 
 .photo-narrative__pose--neutral {
@@ -465,6 +467,7 @@ a {
   inset: 8% 3% 9%;
   visibility: hidden;
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 .narrative-kicker {
@@ -680,6 +683,7 @@ a {
   opacity: 0;
   transform: translateY(-50%);
   pointer-events: none;
+  will-change: transform, opacity;
 }
 
 .hero-phase > span {

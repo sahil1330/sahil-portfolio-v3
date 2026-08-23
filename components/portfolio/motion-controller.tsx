@@ -87,83 +87,83 @@ export function MotionController() {
           ) return;
 
           gsap.set(phaseLabels, { autoAlpha: 0, yPercent: -50, y: 28 });
-          gsap.set(avatarPoses.slice(1), { autoAlpha: 0 });
+          gsap.set(avatarPoses[0], { autoAlpha: 1, scale: 1, xPercent: 0 });
+          gsap.set(avatarPoses[1], { autoAlpha: 0, scale: 0.97, xPercent: -5 });
+          gsap.set(avatarPoses[2], { autoAlpha: 0, scale: 0.97, xPercent: 5 });
           gsap.set(narrativeLayers, { autoAlpha: 0 });
+          gsap.set(productElements, { autoAlpha: 0, y: 18 });
+          gsap.set(infrastructureElements, { autoAlpha: 0, x: -18 });
+          if (narrativeProgress) {
+            gsap.set(narrativeProgress, { "--narrative-progress": 0 });
+          }
 
-          const ramp = (progress: number, start: number, end: number) =>
-            gsap.utils.clamp(0, 1, (progress - start) / (end - start));
-          const chapterOpacity = (
-            progress: number,
-            enterStart: number,
-            enterEnd: number,
-            exitStart: number,
-            exitEnd: number,
-          ) =>
-            Math.min(
-              ramp(progress, enterStart, enterEnd),
-              1 - ramp(progress, exitStart, exitEnd),
-            );
-
-          ScrollTrigger.create({
-            trigger: ".hero-chapter",
-            start: "top top",
-            end: "bottom bottom",
-            onUpdate: ({ progress }) => {
-              const systemsOpacity = chapterOpacity(progress, 0.22, 0.3, 0.54, 0.62);
-              const deliveryOpacity = ramp(progress, 0.55, 0.66);
-              const introOpacity = 1 - ramp(progress, 0.2, 0.3);
-
-              gsap.set(heroCopy, {
-                autoAlpha: introOpacity,
-                y: -36 * (1 - introOpacity),
-              });
-              gsap.set(phaseLabels[0], {
-                autoAlpha: systemsOpacity,
-                yPercent: -50,
-                y: 28 * (1 - systemsOpacity),
-              });
-              gsap.set(phaseLabels[1], {
-                autoAlpha: deliveryOpacity,
-                yPercent: -50,
-                y: 28 * (1 - deliveryOpacity),
-              });
-
-              gsap.set(avatarPoses[0], {
-                autoAlpha: introOpacity,
-                scale: 1 - 0.025 * (1 - introOpacity),
-                xPercent: -4 * (1 - introOpacity),
-              });
-              gsap.set(avatarPoses[1], {
-                autoAlpha: systemsOpacity,
-                scale: 0.97 + 0.03 * systemsOpacity,
-                xPercent: -5 + 5 * systemsOpacity,
-              });
-              gsap.set(avatarPoses[2], {
-                autoAlpha: deliveryOpacity,
-                scale: 0.97 + 0.03 * deliveryOpacity,
-                xPercent: 5 - 5 * deliveryOpacity,
-              });
-              gsap.set(narrativeLayers[0], { autoAlpha: systemsOpacity });
-              gsap.set(narrativeLayers[1], { autoAlpha: deliveryOpacity });
-
-              productElements.forEach((element, index) => {
-                gsap.set(element, {
-                  autoAlpha: systemsOpacity,
-                  y: (18 + index * 5) * (1 - systemsOpacity),
-                });
-              });
-              infrastructureElements.forEach((element, index) => {
-                gsap.set(element, {
-                  autoAlpha: deliveryOpacity,
-                  x: (-14 - index * 4) * (1 - deliveryOpacity),
-                });
-              });
-
-              if (narrativeProgress) {
-                narrativeProgress.style.setProperty("--narrative-progress", `${progress}`);
-              }
+          const heroTimeline = gsap.timeline({
+            defaults: { ease: "none" },
+            scrollTrigger: {
+              trigger: ".hero-chapter",
+              start: "top top",
+              end: "bottom bottom",
+              scrub: true,
             },
           });
+
+          if (narrativeProgress) {
+            heroTimeline.to(
+              narrativeProgress,
+              { "--narrative-progress": 1, duration: 1 },
+              0,
+            );
+          } else {
+            heroTimeline.to({}, { duration: 1 }, 0);
+          }
+
+          heroTimeline
+            .to(heroCopy, { autoAlpha: 0, y: -36, duration: 0.1 }, 0.2)
+            .to(
+              avatarPoses[0],
+              { autoAlpha: 0, scale: 0.975, xPercent: -4, duration: 0.1 },
+              0.2,
+            )
+            .to(
+              phaseLabels[0],
+              { autoAlpha: 1, yPercent: -50, y: 0, duration: 0.08 },
+              0.22,
+            )
+            .to(
+              avatarPoses[1],
+              { autoAlpha: 1, scale: 1, xPercent: 0, duration: 0.08 },
+              0.22,
+            )
+            .to(narrativeLayers[0], { autoAlpha: 1, duration: 0.08 }, 0.22)
+            .to(
+              productElements,
+              { autoAlpha: 1, y: 0, duration: 0.07, stagger: 0.012 },
+              0.23,
+            )
+            .to(
+              productElements,
+              { autoAlpha: 0, y: -10, duration: 0.06, stagger: 0.008 },
+              0.53,
+            )
+            .to(phaseLabels[0], { autoAlpha: 0, y: -20, duration: 0.08 }, 0.54)
+            .to(avatarPoses[1], { autoAlpha: 0, scale: 0.98, duration: 0.08 }, 0.54)
+            .to(narrativeLayers[0], { autoAlpha: 0, duration: 0.08 }, 0.54)
+            .to(
+              phaseLabels[1],
+              { autoAlpha: 1, yPercent: -50, y: 0, duration: 0.11 },
+              0.55,
+            )
+            .to(
+              avatarPoses[2],
+              { autoAlpha: 1, scale: 1, xPercent: 0, duration: 0.11 },
+              0.55,
+            )
+            .to(narrativeLayers[1], { autoAlpha: 1, duration: 0.11 }, 0.55)
+            .to(
+              infrastructureElements,
+              { autoAlpha: 1, x: 0, duration: 0.09, stagger: 0.012 },
+              0.56,
+            );
         },
       );
 
