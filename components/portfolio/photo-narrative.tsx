@@ -75,6 +75,7 @@ export function PhotoNarrative() {
               priority={index === 0}
               sizes="(max-width: 780px) 92vw, (max-width: 1100px) 42vw, 38vw"
               src={pose.src}
+              unoptimized
               width={836}
             />
           </div>
