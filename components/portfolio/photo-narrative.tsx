@@ -24,20 +24,39 @@ export function PhotoNarrative() {
         className="narrative-layer narrative-layer--product"
         data-narrative-layer="product"
       >
-        <div className="product-panel product-panel--primary" data-product-element>
-          <span>Product / Interface</span>
-          <i />
-          <i />
-          <i />
+        <div className="narrative-kicker" data-product-element>
+          <span>Product blueprint</span>
+          <strong>One system</strong>
         </div>
-        <div className="product-panel product-panel--secondary" data-product-element>
-          <span>Workflow / Data</span>
-          <i />
-          <i />
+        <div className="product-blueprint">
+          <div className="product-layer" data-product-element>
+            <span>01</span>
+            <div>
+              <strong>Interface</strong>
+              <small>Next.js experience</small>
+            </div>
+            <em>User</em>
+          </div>
+          <div className="product-layer" data-product-element>
+            <span>02</span>
+            <div>
+              <strong>Services</strong>
+              <small>Node.js APIs</small>
+            </div>
+            <em>Logic</em>
+          </div>
+          <div className="product-layer" data-product-element>
+            <span>03</span>
+            <div>
+              <strong>Data</strong>
+              <small>State + integrations</small>
+            </div>
+            <em>Scale</em>
+          </div>
         </div>
-        <div className="product-signal" data-product-element>
-          <span>01</span>
-          <span>Designed as one system</span>
+        <div className="narrative-proof" data-product-element>
+          <i />
+          <span>One release path across every layer</span>
         </div>
       </div>
 
@@ -45,20 +64,33 @@ export function PhotoNarrative() {
         className="narrative-layer narrative-layer--infrastructure"
         data-narrative-layer="infrastructure"
       >
-        <div className="architecture-path architecture-path--one" />
-        <div className="architecture-path architecture-path--two" />
-        <span className="architecture-node architecture-node--entry" data-infrastructure-element>
-          Request
-        </span>
-        <span className="architecture-node architecture-node--orchestrate" data-infrastructure-element>
-          Orchestrate
-        </span>
-        <span className="architecture-node architecture-node--queue" data-infrastructure-element>
-          Queue
-        </span>
-        <span className="architecture-node architecture-node--deliver" data-infrastructure-element>
-          Deliver
-        </span>
+        <div className="narrative-kicker" data-infrastructure-element>
+          <span>Production path</span>
+          <strong>GCP delivery</strong>
+        </div>
+        <div className="delivery-map">
+          <i className="delivery-map__line" />
+          <div className="delivery-step" data-infrastructure-element>
+            <span>01</span>
+            <div><strong>Request</strong><small>Edge + API</small></div>
+          </div>
+          <div className="delivery-step" data-infrastructure-element>
+            <span>02</span>
+            <div><strong>Queue</strong><small>Cloud Tasks</small></div>
+          </div>
+          <div className="delivery-step" data-infrastructure-element>
+            <span>03</span>
+            <div><strong>Worker</strong><small>Node services</small></div>
+          </div>
+          <div className="delivery-step" data-infrastructure-element>
+            <span>04</span>
+            <div><strong>Observe</strong><small>Logs + metrics</small></div>
+          </div>
+        </div>
+        <div className="narrative-proof" data-infrastructure-element>
+          <i />
+          <span>Observed · retried · scaled</span>
+        </div>
       </div>
 
       <div className="photo-narrative__poses">

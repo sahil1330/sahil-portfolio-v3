@@ -100,14 +100,14 @@ export function PortfolioPage() {
             </div>
 
             <div className="hero-phase" data-hero-phase>
-              <span>02 / Product engineering</span>
-              <h2>Frontend, backend and data designed together.</h2>
-              <p>Every layer supports a clear, usable product experience.</p>
+              <span>02 / Product systems</span>
+              <h2>Frontend, backend and data—working as one.</h2>
+              <p>A clear interface backed by reliable APIs and deliberate data.</p>
             </div>
             <div className="hero-phase" data-hero-phase>
-              <span>03 / Delivery</span>
-              <h2>Built to perform beyond the development environment.</h2>
-              <p>Deployment, security and performance considered from the start.</p>
+              <span>03 / Production delivery</span>
+              <h2>Designed to ship. Built to scale.</h2>
+              <p>Cloud delivery, queues, observability and performance planned from the start.</p>
             </div>
           </div>
           <div className="hero-chapter__scroll-space" aria-hidden="true" />

@@ -86,7 +86,7 @@ export function MotionController() {
             narrativeLayers.length !== 2
           ) return;
 
-          gsap.set(phaseLabels, { autoAlpha: 0, y: 28 });
+          gsap.set(phaseLabels, { autoAlpha: 0, yPercent: -50, y: 28 });
           gsap.set(avatarPoses.slice(1), { autoAlpha: 0 });
           gsap.set(narrativeLayers, { autoAlpha: 0 });
 
@@ -119,10 +119,12 @@ export function MotionController() {
               });
               gsap.set(phaseLabels[0], {
                 autoAlpha: systemsOpacity,
+                yPercent: -50,
                 y: 28 * (1 - systemsOpacity),
               });
               gsap.set(phaseLabels[1], {
                 autoAlpha: deliveryOpacity,
+                yPercent: -50,
                 y: 28 * (1 - deliveryOpacity),
               });
 
