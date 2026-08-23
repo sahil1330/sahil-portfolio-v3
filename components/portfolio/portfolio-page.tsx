@@ -1,8 +1,8 @@
 import { ArrowDown, ArrowUpRight, MapPin } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
-import { LazyHeroScene } from "@/components/portfolio/lazy-hero-scene";
 import { MotionController } from "@/components/portfolio/motion-controller";
+import { PhotoNarrative } from "@/components/portfolio/photo-narrative";
 import { capabilities, experience, projects } from "@/lib/portfolio-data";
 import { cn } from "@/lib/utils";
 
@@ -89,17 +89,12 @@ export function PortfolioPage() {
             </div>
             </div>
 
-            <div className="hero-stage" aria-label="Scroll-controlled 3D avatar scene">
+            <div className="hero-stage" aria-label="Scroll-controlled portrait narrative">
               <div className="hero-stage__frame">
-              <span className="hero-stage__label">SAHIL / INTERACTIVE PORTRAIT</span>
-              <div className="avatar-placeholder" aria-hidden="true">
-                <span className="avatar-placeholder__head" />
-                <span className="avatar-placeholder__body" />
-                <span className="avatar-placeholder__base" />
-              </div>
-              <LazyHeroScene />
+              <span className="hero-stage__label">SAHIL / SYSTEMS IN MOTION</span>
+              <PhotoNarrative />
               <span className="hero-stage__note">
-                Scroll to explore
+                Scroll / 01—03
               </span>
               </div>
             </div>

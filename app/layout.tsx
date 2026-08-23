@@ -35,15 +35,21 @@ export const metadata: Metadata = {
     description:
       "Full-stack engineer and engineering lead building scalable products, cloud systems and agentic workflows.",
     siteName: "Sahil Mane",
+    images: [
+      {
+        url: "https://sahil-portfolio-v3.sahilmane025.chatgpt.site/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Sahil Mane — Full-Stack Engineer and Engineering Lead",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sahil Mane — Full-Stack Engineer & Engineering Lead",
     description:
       "Full-stack engineer and engineering lead building scalable products, cloud systems and agentic workflows.",
-  },
-  other: {
-    "codex-preview": "development",
+    images: ["https://sahil-portfolio-v3.sahilmane025.chatgpt.site/og.png"],
   },
   icons: {
     icon: "/favicon.svg",
