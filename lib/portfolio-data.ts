@@ -4,7 +4,9 @@ export type Project = {
   category: string;
   summary: string;
   contribution: string;
-  imagePath: string;
+  imagePath?: string;
+  previewLabel?: string;
+  imageFit?: "cover" | "contain";
   accent: string;
 };
 
@@ -17,40 +19,32 @@ export const projects: Project[] = [
       "An AI-powered job-search SaaS bringing job discovery, resume tools, account management and billing into one product.",
     contribution:
       "Full-stack product development, authentication, analytics, credit-based billing and payment integration.",
-    imagePath: "/images/projects/zaprill-cover.webp",
+    imagePath: "/images/projects/zaprill-preview.webp",
+    previewLabel: "Zaprill / Career intelligence",
+    imageFit: "contain",
     accent: "#ff5a36",
   },
   {
     number: "02",
-    title: "e-Sight",
+    title: "Maceazy",
     category: "Assistive technology · Hardware + software",
     summary:
-      "An assistive device designed to help blind and low-vision users understand nearby objects through sensors and audio feedback.",
+      "A connected assistive technology platform designed to make independent mobility safer and more accessible for blind and low-vision users.",
     contribution:
       "Software development, ESP32 and BLE integration, mobile prototyping and backend architecture.",
-    imagePath: "/images/projects/esight-cover.webp",
+    imagePath: "/images/projects/maceazy-preview.webp",
+    previewLabel: "maceazy.com",
+    imageFit: "cover",
     accent: "#d9ff43",
   },
   {
     number: "03",
-    title: "Vishnushakti",
-    category: "Nonprofit platform · Full-stack development",
-    summary:
-      "A custom nonprofit website and administration platform for donations, publishing, volunteers and community communication.",
-    contribution:
-      "End-to-end PHP development, Razorpay payments, email workflows, content tools and admin features.",
-    imagePath: "/images/projects/vishnushakti-cover.webp",
-    accent: "#83b7ff",
-  },
-  {
-    number: "04",
     title: "Enterprise AI systems",
     category: "Enterprise engineering · Confidential client",
     summary:
       "Scalable applications and personalized agentic workflows built for a large Canadian enterprise and used by thousands of people.",
     contribution:
       "Engineering leadership, monorepo and Node.js development, complex agent workflows, and GCP infrastructure with Cloud Tasks and Redis.",
-    imagePath: "/images/projects/platform-cover.webp",
     accent: "#f0c4ff",
   },
 ];
@@ -97,7 +91,7 @@ export const experience = [
   {
     period: "Venture",
     role: "Product & Engineering",
-    context: "Austrange Solutions · e-Sight",
+    context: "Austrange Solutions · Maceazy",
     outcome:
       "Building the software and hardware layers of an assistive technology product.",
   },

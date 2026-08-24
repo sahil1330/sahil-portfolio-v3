@@ -50,7 +50,7 @@ export function MotionController() {
           });
         });
 
-        gsap.utils.toArray<HTMLElement>(".project-placeholder").forEach((visual) => {
+        gsap.utils.toArray<HTMLElement>(".project-media").forEach((visual) => {
           gsap.fromTo(
             visual,
             { clipPath: "inset(12% 0 12% 0)" },

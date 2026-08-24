@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowUpRight, MapPin } from "lucide-react";
+import Image from "next/image";
 
 import { buttonVariants } from "@/components/ui/button";
 import { MotionController } from "@/components/portfolio/motion-controller";
@@ -15,16 +16,54 @@ function SectionMarker({ index, label }: { index: string; label: string }) {
   );
 }
 
-function ProjectPlaceholder({
+function ProjectVisual({
   title,
   accent,
+  imagePath,
+  previewLabel,
+  imageFit = "cover",
 }: {
   title: string;
   accent: string;
+  imagePath?: string;
+  previewLabel?: string;
+  imageFit?: "cover" | "contain";
 }) {
+  if (imagePath) {
+    return (
+      <div
+        className="project-preview project-media"
+        style={{ "--project-accent": accent } as React.CSSProperties}
+      >
+        <div className="project-preview__window">
+          <div className="project-preview__bar" aria-hidden="true">
+            <span className="project-preview__controls">
+              <i />
+              <i />
+              <i />
+            </span>
+            <span>{previewLabel ?? title}</span>
+            <span className="project-preview__status">LIVE PREVIEW</span>
+          </div>
+          <div className="project-preview__viewport">
+            <Image
+              src={imagePath}
+              alt={`${title} product preview`}
+              fill
+              sizes="(max-width: 960px) 100vw, 58vw"
+              className={`project-preview__image project-preview__image--${imageFit}`}
+              unoptimized
+            />
+          </div>
+        </div>
+        <span className="project-preview__caption">Selected project / interface</span>
+      </div>
+    );
+  }
+
   return (
     <div
-      className="project-placeholder"
+      className="project-placeholder project-media"
       style={{ "--project-accent": accent } as React.CSSProperties}
       role="img"
       aria-label={`${title} project image placeholder`}
@@ -127,9 +166,12 @@ export function PortfolioPage() {
             {projects.map((project) => (
               <article className="project" key={project.title} data-reveal>
                 <div className="project__visual">
-                  <ProjectPlaceholder
+                  <ProjectVisual
                     title={project.title}
                     accent={project.accent}
+                    imagePath={project.imagePath}
+                    previewLabel={project.previewLabel}
+                    imageFit={project.imageFit}
                   />
                 </div>
                 <div className="project__content">

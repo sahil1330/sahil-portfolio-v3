@@ -800,6 +800,106 @@ a {
   text-transform: uppercase;
 }
 
+.project-preview {
+  --project-accent: #ff5a36;
+  position: relative;
+  display: flex;
+  min-height: 30rem;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.2rem, 3vw, 2.5rem);
+  overflow: hidden;
+  background:
+    linear-gradient(rgb(242 240 234 / 4%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(242 240 234 / 4%) 1px, transparent 1px),
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--project-accent) 13%, transparent), transparent 38%),
+    #0d0f11;
+  background-size: 3rem 3rem, 3rem 3rem, auto, auto;
+}
+
+.project-preview::after {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgb(242 240 234 / 8%);
+  content: "";
+  pointer-events: none;
+}
+
+.project-preview__window {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 58rem);
+  overflow: hidden;
+  border: 1px solid rgb(242 240 234 / 18%);
+  border-radius: 0.45rem;
+  background: #090a0c;
+  box-shadow: 0 2rem 5rem rgb(0 0 0 / 38%);
+}
+
+.project-preview__bar {
+  display: grid;
+  min-height: 2.1rem;
+  grid-template-columns: 4.5rem 1fr 4.5rem;
+  align-items: center;
+  padding: 0 0.7rem;
+  border-bottom: 1px solid rgb(242 240 234 / 12%);
+  color: #9b9b98;
+  font: 500 0.48rem/1 var(--font-geist-mono), monospace;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.project-preview__controls {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.project-preview__controls i {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: rgb(242 240 234 / 22%);
+}
+
+.project-preview__controls i:first-child {
+  background: var(--project-accent);
+}
+
+.project-preview__status {
+  color: color-mix(in srgb, var(--project-accent) 78%, white);
+  text-align: right;
+}
+
+.project-preview__viewport {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #07080a;
+}
+
+.project-preview__image {
+  object-position: top center;
+}
+
+.project-preview__image--cover {
+  object-fit: cover;
+}
+
+.project-preview__image--contain {
+  object-fit: contain;
+}
+
+.project-preview__caption {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.75rem;
+  color: rgb(242 240 234 / 48%);
+  font: 500 0.48rem/1 var(--font-geist-mono), monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .project-placeholder::before {
   position: absolute;
   right: -10%;
@@ -1329,8 +1429,21 @@ a {
   }
 
   .project__visual,
-  .project-placeholder {
+  .project-placeholder,
+  .project-preview {
     min-height: 22rem;
+  }
+
+  .project-preview {
+    padding: 1rem;
+  }
+
+  .project-preview__status {
+    display: none;
+  }
+
+  .project-preview__bar {
+    grid-template-columns: 3.5rem 1fr 3.5rem;
   }
 
   .project__content {

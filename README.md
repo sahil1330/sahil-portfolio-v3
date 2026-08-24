@@ -93,9 +93,8 @@ transitions remain aligned.
 | Asset | Path | Recommended format |
 |---|---|---|
 | About portrait | `public/images/sahil-portrait.webp` | 4:5 vertical, at least 1600 × 2000 px |
-| Zaprill cover | `public/images/projects/zaprill-cover.webp` | 16:10 or 3:2 product visual |
-| e-Sight cover | `public/images/projects/esight-cover.webp` | Device photo or polished product render |
-| Vishnushakti cover | `public/images/projects/vishnushakti-cover.webp` | Interface montage or project photography |
+| Zaprill preview | `public/images/projects/zaprill-preview.webp` | Current dashboard interface |
+| Maceazy preview | `public/images/projects/maceazy-preview.webp` | Temporary website capture; replace with app imagery |
 | Enterprise work cover | `public/images/projects/platform-cover.webp` | Anonymized architecture or system visual |
 | Résumé | `public/sahil-mane-resume.pdf` | Current PDF résumé |
 
