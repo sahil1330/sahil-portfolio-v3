@@ -281,8 +281,10 @@ export function PortfolioPage() {
             <a
               className={cn(buttonVariants({ variant: "outline", size: "lg" }), "contact-button")}
               href="/sahil-mane-resume.pdf"
+              target="_blank"
+              rel="noreferrer"
             >
-              Download résumé
+              View résumé
             </a>
           </div>
           <footer className="site-footer">
